@@ -1,0 +1,7 @@
+#Packages to be installed for the project
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
+-e.
