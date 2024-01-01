@@ -4,4 +4,7 @@ numpy
 seaborn
 matplotlib
 scikit-learn
--e.
+xgboost
+flask
+dill
+#-e.
