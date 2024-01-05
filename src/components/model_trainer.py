@@ -57,9 +57,49 @@ class ModelTrainer:
                     "SupportVectorClassifier":SVC(),
                     "AdaBoost":AdaBoostClassifier()
           }
+
+            params={
+                    "Random_Forest_Classifier":{
+                    'criterion':['gini', 'log_loss', 'entropy'],
+                    'max_features':['sqrt','log2'],
+                    'n_estimators': [8,16,32,64,128,256] },
+
+                    "Decision_Tree_Classifier":{
+                    'criterion':['entropy', 'gini', 'log_loss'],
+                                 'splitter':['best','random'],
+                                'max_features':['sqrt','log2']},
+                        
+                        "K_Neighbour_Classifier":{'n_neighbors' : [5,7,9,11,13,15],
+                            'weights' : ['uniform','distance'],
+                            'metric' : ['minkowski','euclidean','manhattan']},
+                        
+                        "SupportVectorClassifier":{
+                            'C': [0.1, 1, 10, 100, 1000], 
+                            'gamma': [1, 0.1, 0.01, 0.001, 0.0001],
+                            'kernel': ['rbf']},
+                        
+                         "AdaBoost":{
+                    'learning_rate':[.1,.01,0.5,.001],
+                    # 'loss':['linear','square','exponential'],
+                    'n_estimators': [8,16,32,64,128,256]},
+
+                    "XGBoost_Classifier":{
+                    'n_estimators': [50, 100, 200],
+                    'learning_rate': [0.01, 0.1, 1.0],
+                    'max_depth': [3, 4, 5],
+                    'subsample': [0.8, 0.9, 1.0],
+                    'colsample_bytree': [0.8, 0.9, 1.0],
+                    'gamma': [0, 1, 2],
+                    'min_child_weight': [1, 2, 3]},
+                        
+                     "Logistic_regression":{},
+                        
+                        "Naive_Bayes_Classifier":{}
+            }
             
 
-            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models)
+            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models,param=params
+            )
 
 
 
