@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Tour Package</title>
+    <title>Tour Package</title>
     <style>
         body {
             background-color: #D5F5E3;
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-            padding: 20px;
         }
 
         h1 {
@@ -24,60 +21,51 @@
         }
 
         form {
-            margin: 20px auto;
-            max-width: 600px;
+            margin: 20px;
             padding: 20px;
-            background-color: #FFFFFF;
-            border: 2px solid brown;
+            border: 2px solid #3498db;
             border-radius: 10px;
+            background-color: #ecf0f1;
         }
 
         label {
-            display: block;
-            margin-bottom: 8px;
-            color: brown;
+            display: inline-block;
+            margin-bottom: 5px;
         }
 
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 16px;
-            border: 1px solid brown;
+        select, input {
+            margin-bottom: 10px;
+            padding: 5px;
             border-radius: 5px;
-            box-sizing: border-box;
+            border: 1px solid #3498db;
         }
 
-        #predict {
-            background-color: brown;
-            color: #FFFFFF;
-            padding: 10px 20px;
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
-        #predict:hover {
-            background-color: #8B4513;
-        }
-
-        .result {
+        p.results {
             color: blue;
             text-align: center;
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <h1>Welcome to the Tour Package Prediction</h1>
-    <p>This will show whether a customer will purchase a package or not.</p>
+    <p>This will show whether a customer will purchase a Package or Not.</p>
     <form action="{{ url_for('predict_datapoint')}}" method="post">
         <label for="age">Age</label>
         <input type="number" name="age" id="age">
 
         <label for="prefferedpropertystar">Preferred Property Stars</label>
-        <select name="prefferedpropertystar" id="prefferedpropertystar">
-            <option value=3>3.0 </option>
-            <option value=4>4.0 </option>
+        <select name="preferredpropertystar" id="preferredpropertystar">
+            <option value=3>3.0</option>
+            <option value=4>4.0</option>
             <option value=5>5.0</option>
             <option value=6>6.0</option>
         </select>
@@ -114,7 +102,7 @@
             <option value=8>8.0</option>
         </select>
 
-        <label for="durationofpitch">Duration of Pitch</label>
+        <label for="durationofpitch">Duration Of Pitch</label>
         <input type="number" name="durationofpitch" id="durationofpitch">
 
         <label for="passport">Passport</label>
@@ -200,9 +188,11 @@
         <label for="monthlyincome">Monthly Income</label>
         <input type="monthlyincome" name="monthlyincome" id="monthlyincome">
 
-        <label for="predict">Submit Details for Prediction</label>
-        <input type="submit" name="predict" id="predict">
+        <label for="predict_datapoint" style="color: brown;text-align: center;">SUBMIT DETAILS FOR PREDICTION</label>
+        <input type="submit" name="predict_datapoint" id="predict_datapoint" style="color: brown;text-align: center;">
     </form>
-    <p class="result">THE  prediction is {{ results }}</p>
+
+    <p class="results">Customer is Supposed to Be {{ results }} the Package.</p>
 </body>
 </html>
+
