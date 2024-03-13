@@ -41,17 +41,17 @@ dill
 
 ## ⚙️Project Structure
 We have used the following structure to develop this End-To-End Project:
-setup.pyIt is a script in Python that is used for packaging and distributing Python projects.
-requirements.txt it will have all the packages that i really need to install while im implementing the project.
-logger.py It helps in capturing detailed information about events occurring at specific times or within specific files.
-exception.py takes charge of handling custom exceptions that arise when an error occurs in any file. It provides detailed information including the file name, line number, and the nature of the error.
-.gitignore prevents the inclusion of specific files that we don't want to push to GitHub.
-readme.md contain general informtion about the project steps and requiremnts for further explaination.
+* setup.pyIt is a script in Python that is used for packaging and distributing Python projects.
+* requirements.txt it will have all the packages that i really need to install while im implementing the project.
+* logger.py It helps in capturing detailed information about events occurring at specific times or within specific files.
+* exception.py takes charge of handling custom exceptions that arise when an error occurs in any file. It provides detailed information including the file name, line number, and the nature of the error.
+* .gitignore prevents the inclusion of specific files that we don't want to push to GitHub.
+* readme.md contain general informtion about the project steps and requiremnts for further explaination.
 datacontain the dataset.
-src contain many subfolder. we need to give a __init__.py file in each directory so that we can use each file as a package.
-src/data_ingestion.py It is a part of a module when we are developing a project. it will have all the code that will be related to reading the data.
-src/data_transformation.pyAfter ingesting the data i may do transformation of data or validation of data. For this we will have this file. Over here will be probably writing the code, how to change the categorical variable to numerical variable, how to handle the one hot encoding or label encoding etc.
-src/Model_trainer.pyhandles both model training and hyperparameter tuning. It returns a model pickle file that is trained on the provided data and can be utilized for subsequent predictions.
-src/Prediction_Pipeline.py is responsible for the Creating the Pipeline using the app.py
-utils.py is used for creating and storing the common function which are used through out the Project.
-app.py serves as the web application file that interacts with users.
+* src contain many subfolder. we need to give a __init__.py file in each directory so that we can use each file as a package.
+* src/data_ingestion.py It is a part of a module when we are developing a project. it will have all the code that will be related to reading the data.
+* src/data_transformation.pyAfter ingesting the data i may do transformation of data or validation of data. For this we will have this file. Over here will be probably writing the code, how to change the categorical variable to numerical variable, how to handle the one hot encoding or label encoding etc.
+* src/Model_trainer.pyhandles both model training and hyperparameter tuning. It returns a model pickle file that is trained on the provided data and can be utilized for subsequent predictions.
+* src/Prediction_Pipeline.py is responsible for the Creating the Pipeline using the app.py
+* utils.py is used for creating and storing the common function which are used through out the Project.
+* app.py serves as the web application file that interacts with users.
