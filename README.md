@@ -55,3 +55,11 @@ datacontain the dataset.
 * ```src/Prediction_Pipeline.py``` is responsible for the Creating the Pipeline using the app.py
 * ```utils.py``` is used for creating and storing the common function which are used through out the Project.
 * ```app.py``` serves as the web application file that interacts with users.
+
+## 👨🏻‍💻Run Locally
+* Before the following steps make sure you have git, Anaconda or miniconda installed on your system
+* Clone the complete project with git clone https://github.com/khandayubaid/Travel-Purchase-Package.git or you can just download the code and unzip it.
+* Once the project is cloned, open VSCode prompt in the directory where the project was cloned and paste the following block ```conda create -p venv python=3.8 -y``` after that 
+* ```myenv/Scripts/Activate.ps1```
+* ```pip install -r requirements.txt``` And finally run the project with ```python app.py```.
+* Open the localhost url provided after running app.py and now you can use the project locally in your web browser or put ```http://127.0.0.1:8080``` which is your local host.
